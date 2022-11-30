@@ -19,7 +19,6 @@ async function bootstrap() {
   });
   app.use(cookieParser());
   app.enableCors()
-  const PORT = process.env.PORT || 5000;
-  await app.listen(PORT);
+  await app.listen(parseInt(process.env.PORT) || 5000);
 }
 bootstrap();
