@@ -18,7 +18,9 @@ async function bootstrap() {
     type: VersioningType.URI,
   });
   app.use(cookieParser());
-  app.enableCors()
+  app.enableCors();
+  console.log(process.env.PORT);
   await app.listen(process.env.PORT, '0.0.0.0');
+  
 }
 bootstrap();
