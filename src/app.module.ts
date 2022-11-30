@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-      url: 'https://puente-solidaridad.herokuapp.com/',
+      url: process.env.DATABASE_URL,
       type: 'postgres',
       ssl: {
         rejectUnauthorized: false,
