@@ -18,7 +18,6 @@ export class UserController {
     constructor(private userService: UserService, private jwtService: JwtService) {}
 
     @Roles(Role.ADMIN)
-    @UseGuards(JwtGuard, RolesGuard)
     @Post('user')
     register2(@Body() user: UserEntryDto): Observable<User> {
         return this.userService.registerUser(user);
